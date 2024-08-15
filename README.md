@@ -1,4 +1,4 @@
-# Vue.js 시작하기
+# Vue.js 강의1
 
 [Vue.js 시작하기 인프런 강의](https://inf.run/RxKK)와 [Vue 3 시작하기 인프런 강의](https://inf.run/kRHp) 리포지토리입니다.
 
