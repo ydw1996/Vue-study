@@ -38,3 +38,58 @@ new Vue({
 ## 뷰 컴포넌트
 
 [Vue 컴포넌트 공식문서](https://ko.vuejs.org/guide/essentials/component-basics)
+
+- Vue 컴포넌트는 재사용 가능한 UI 요소를 정의하는 방법
+- 컴포넌트는 HTML, CSS, JavaScript를 하나로 묶어 독립적인 블록
+
+### 1. 컴포넌트 정의
+
+```jsx
+Vue.component('my-component', {
+  template: '<div>Hello, this is my component!</div>',
+});
+```
+
+### 2. 컴포넌트 사용
+
+```jsx
+<div id="app">
+  <my-component></my-component>
+</div>
+```
+
+### 3. 데이터와 메소드 사용
+
+```jsx
+Vue.component('counter-component', {
+  data() {
+    return { count: 0 };
+  },
+  template: '<button @click="count++">{{ count }}</button>',
+});
+```
+
+### 4. 부모-자식 간 데이터 전달 (Props)와 이벤트 (Events)
+
+```jsx
+// 자식 컴포넌트에서 Props 사용
+Vue.component('child-component', {
+  props: ['message'],
+  template: '<p>{{ message }}</p>',
+});
+
+// 자식 컴포넌트에서 이벤트 발생
+Vue.component('button-counter', {
+  data() {
+    return { count: 0 };
+  },
+  template:
+    '<button @click="increment">{{ count }}</button>',
+  methods: {
+    increment() {
+      this.count++;
+      this.$emit('increment');
+    },
+  },
+});
+```
