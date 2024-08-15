@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Getting Started</title>
+    <title>Document</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-      new Vue({
+      // vue에서 제공하는 api 및 속성
+      var options = {
         el: '#app',
         data: {
-          message: 'Hello Vue.js',
+          message: 'hi',
         },
-      });
+        methods: {},
+        created: function () {},
+      };
+      var vm = new Vue(options);
     </script>
   </body>
 </html>
